@@ -8,7 +8,7 @@ pub struct User {
     pub first_name: String,
     pub last_name: String,
     pub deactivated: Option<String>,
-    pub is_closed: Boolean,
+    pub is_closed: Option<Boolean>,
     pub can_access_closed: Boolean,
 
     // Optional fields A-L
