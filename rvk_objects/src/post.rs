@@ -4,14 +4,14 @@ use super::*;
 #[derive(Deserialize, Clone, Debug)]
 pub struct Post {
     pub id: Integer,
+    pub from_id: Integer,
 
     pub owner_id: Option<Integer>,
     pub to_id: Option<Integer>,
 
-    pub from_id: Integer,
     pub created_by: Option<Integer>,
-    pub date: Integer,
-    pub text: String,
+    pub date: Option<Integer>,
+    pub text: Option<String>,
     pub reply_owner_id: Option<Integer>,
     pub reply_post_id: Option<Integer>,
     pub friends_only: Option<Integer>,
@@ -19,9 +19,9 @@ pub struct Post {
     pub likes: Option<Likes>,
     pub reposts: Option<Reposts>,
     pub views: Option<Views>,
-    pub post_type: String,
+    pub post_type: Option<String>,
     pub post_source: Option<post_source::PostSource>,
-    pub attachments: Option<Vec<attachment::WallAttachment>>,
+    //pub attachments: Option<Vec<attachment::WallAttachment>>,
     pub geo: Option<geo::Geo>,
     pub signer_id: Option<Integer>,
     pub copy_history: Option<Vec<Post>>,
