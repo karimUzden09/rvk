@@ -13,6 +13,7 @@ pub struct Comment {
     pub parents_stack: Option<Vec<Integer>>,
     pub thread: Option<Thread>,
     pub deleted: Option<Boolean>,
+    pub likes: Option<LikesShort>,
 
     // For attachment::MessageAttachment
     pub post_id: Option<Integer>,
@@ -26,4 +27,11 @@ pub struct Thread {
     pub can_post: Boolean,
     pub show_reply_button: Boolean,
     pub groups_can_post: Boolean,
+}
+#[derive(Deserialize, Clone, Debug)]
+pub struct LikesShort {
+    pub can_like: i64,
+    pub count: i64,
+    pub user_likes: i64,
+    pub can_publish: i64,
 }
