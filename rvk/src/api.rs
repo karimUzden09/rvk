@@ -31,6 +31,17 @@ impl APIClient {
             token: token.into(),
         }
     }
+    pub fn new_with_client(
+        api_version: impl Into<String>,
+        token: impl Into<String>,
+        client: Client,
+    ) -> APIClient {
+        APIClient {
+            client,
+            api_version: api_version.into(),
+            token: token.into(),
+        }
+    }
 
     /// Calls an API method, given its name and parameters.
     pub async fn call_method<T: DeserializeOwned>(
